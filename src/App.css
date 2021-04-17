@@ -1,0 +1,7 @@
+.pApp {
+  display: flex;
+  padding-top: 25px;
+  padding-bottom: 15px;
+  width: 450px;
+  margin: 0 auto;
+}

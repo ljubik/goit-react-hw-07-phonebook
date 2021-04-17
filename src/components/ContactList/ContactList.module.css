@@ -1,0 +1,40 @@
+.list {
+  /* display: flex;
+  flex-wrap: wrap; */
+  list-style: none;
+  width: 450px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.list button {
+  margin-left: 20px;
+  position: relative;
+  flex-grow: 1;
+}
+
+.listBtn {
+  position: absolute;
+  right: -50px;
+  padding: 5px;
+  margin-bottom: 5px;
+  flex-grow: 1;
+}
+
+.listLi {
+  width: 450px;
+  display: flex;
+  flex-basis: 150px;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+.listLi:nth-child(2n) {
+  background-color: blanchedalmond;
+}
+
+span {
+  flex-basis: 150px;
+  flex-grow: 1;
+  flex-shrink: 0;
+}

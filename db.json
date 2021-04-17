@@ -1,0 +1,59 @@
+{
+  "contacts": [
+    {
+      "id": "1",
+      "name": "Любомир",
+      "tel": "050 187 13 16"
+    }
+  ],
+  "orders": [
+    {
+      "name": "Coca-Cola",
+      "count": "6",
+      "status": true,
+      "id": 1
+    },
+    {
+      "name": "Fanta",
+      "count": "2",
+      "status": true,
+      "id": 2
+    },
+    {
+      "name": "Coca-Cola",
+      "count": "3",
+      "status": false,
+      "id": 3
+    },
+    {
+      "name": "Coca-Cola",
+      "count": "4",
+      "status": false,
+      "id": 4
+    },
+    {
+      "name": "Coffee",
+      "count": "33",
+      "status": false,
+      "id": 5
+    },
+    {
+      "name": "water",
+      "count": "2",
+      "status": false,
+      "id": 6
+    },
+    {
+      "name": "water with lemon",
+      "count": "22",
+      "status": false,
+      "id": 7
+    },
+    {
+      "name": "Coca-Cola",
+      "count": "5",
+      "status": false,
+      "id": 8
+    }
+  ]
+}
