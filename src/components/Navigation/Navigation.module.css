@@ -1,0 +1,19 @@
+.navList {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+}
+.navList li a {
+  padding: 20px;
+}
+
+.NavLink {
+  color: white;
+  text-transform: uppercase;
+}
+
+.NavLinkActive {
+  color: red;
+}

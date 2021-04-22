@@ -1,0 +1,58 @@
+[
+    {
+      "id": "1",
+      "component": "./Page/Home/Home",
+      "name": "home",
+      "private": true,
+      "props": {
+        "to": "/home",
+        "exact": true,
+        "restricted": false
+      }
+    },
+    {
+      "id": "2",
+      "component": "./components/ContactList/ContactList",
+      "name": "contacts",
+      "props": {
+        "to": "/contacts",
+        "private": true,
+        "exact": true,
+        "restricted": false
+      }
+    },
+    {
+      "id": "3",
+      "component": "./Page/Register/RegisterPage",
+      "name": "Register",
+      "private": false,
+      "props": {
+        "to": "/register",
+        "exact": true,
+        "restricted": true
+      }
+    },
+    {
+      "id": "4",
+      "component": "./Page/Login/LoginPage",
+      "name": "Login",
+      "private": false,
+      "props": {
+        "to": "/login",
+        "exact": true,
+        "restricted": true
+      }
+    },
+    {
+      "id": "5",
+      "component": "../App.js",
+      "name": "app",
+      "private": true,
+      "props": {
+        "to": "/",
+        "exact": true,
+        "restricted": false
+      }
+    }
+  ]
+  

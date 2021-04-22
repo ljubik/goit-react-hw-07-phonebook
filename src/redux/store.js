@@ -9,7 +9,14 @@ import storage from 'redux-persist/lib/storage'
 // export store
 import reducers from './modal/reducers'
 import orderReducer from './orders/reducers'
+import logger from 'redux-logger'
+import authReducer from './auth/reducers'
 
+const config = {
+  key: '123456',
+  storage,
+  whitelist: ['token'],
+}
 
 const rootReducer = combineReducers({
   filter: filterReducer,
@@ -18,7 +25,10 @@ const rootReducer = combineReducers({
   showModal: reducers.modalReducer,
   mycontacts: orderReducer.orderReducer,
   filterOrder: orderReducer.filterReducer,
+  auth: persistReducer(config, authReducer),
 }, localStorage.contacts);
+
+const middleware = [...getDefaultMiddleware(), logger]
 
 const persistedState = localStorage.getItem('reduxState')
   ? JSON.parse(localStorage.getItem('reduxState'))
@@ -32,7 +42,7 @@ const persistedState = localStorage.getItem('reduxState')
 const store = configureStore({
   reducer: {
     showModal: reducers.modalReducer,
-
+    auth: persistReducer(config, authReducer),
     contacts: orderReducer.orderReducer,
     filterOrder: orderReducer.filterReducer,
   },

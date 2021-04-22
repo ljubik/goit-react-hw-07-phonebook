@@ -5,6 +5,8 @@ import Main from "./components/Main/Main";
 import ContactForm from "./components/ContactForm/ContactForm";
 import ContactList from "./components/ContactList/ContactList";
 import Filter from "./components/Filter/Filter";
+import Navigation from './components/Navigation/Navigation';
+import navLinks from './db/naviate.json';
 
 import { connect } from "react-redux";
 import addUserAction from "./redux/actions/userAction";
@@ -14,10 +16,12 @@ import operations from './redux/orders/operations';
 import { getOrders, filteredOrders } from './redux/orders/selectors';
 
 
+
 class App extends Component {
   state = {
     contacts: [],
     filter: "",
+    auth: {},
   };
   
   addContact = (el) => {
@@ -61,7 +65,6 @@ class App extends Component {
   };
 
   componentDidMount() {
-    console.log("---------------",this.props.getMyOrders)
     const contactLocalStorege = JSON.parse(localStorage.getItem("contacts"));
     if (contactLocalStorege) {
       this.setState(() => ({ contacts: [...contactLocalStorege] }));
@@ -99,20 +102,16 @@ class App extends Component {
       getMyFilter,
       filteredOrders,
 } = this.props
-    // console.log("this.props.getMyOrders", this.props.getMyOrders())
-    // console.log("this.props", this.props);
-    // console.log("this.props.contacts", this.props.contacts);
 
     return (
       <div className="App">
-        <Main title="Телефонна книжка v.1.4"/>
+        <Navigation links={navLinks} />
+        <Main title="Телефонна книжка v.1.5"/>
         <ContactForm  
           getValue={getValue} 
           myOrders={myOrders}
           addMyOrder={addMyOrder}
-          getMyOrders={getMyOrders}
-          
-          
+          getMyOrders={getMyOrders} 
         />
         <h2 className="pApp">Пошук контактів </h2>
         <Filter 
