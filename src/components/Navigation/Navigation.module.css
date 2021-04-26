@@ -4,16 +4,16 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0;
+  list-style: none;
 }
 .navList li a {
   padding: 20px;
 }
 
 .NavLink {
-  color: white;
   text-transform: uppercase;
 }
 
 .NavLinkActive {
-  color: red;
+  color: blueviolet;
 }

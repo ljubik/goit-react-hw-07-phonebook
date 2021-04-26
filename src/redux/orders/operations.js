@@ -11,7 +11,9 @@ import {
 } from './actions'
 
 import axios from 'axios'
-axios.defaults.baseURL = `http://localhost:4000`
+// axios.defaults.baseURL = `http://localhost:4000`
+axios.defaults.baseURL = `https://goit-phonebook-api.herokuapp.com/`
+
 
 const getOrders = () => (dispatch) => {
   dispatch(getOrdersRequest())

@@ -20,7 +20,7 @@ const Navigation = ({ links, myUserName, myLogout, isAuth }) => {
   return (
     <>
       <ul className={s.navList}>
-        <li>
+        {/* <li>
           <NavLink to="/" exact>
             Home
           </NavLink>
@@ -34,7 +34,7 @@ const Navigation = ({ links, myUserName, myLogout, isAuth }) => {
           <NavLink to="/contacts" exact>
             Contacts
           </NavLink>
-        </li>
+        </li> */}
         {links.map((el) => {
           const { props, name } = el
           return (

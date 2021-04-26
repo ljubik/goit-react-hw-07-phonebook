@@ -30,9 +30,8 @@ class Home extends Component {
     return (
       <div className={style.home}>
       {/* <Navigate /> */}
-<App></App>
+        <App  />
         {msg && <p>{msg}</p>}
-        TEST
       </div>
     );
   }

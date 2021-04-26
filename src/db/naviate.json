@@ -5,7 +5,7 @@
       "name": "home",
       "private": true,
       "props": {
-        "to": "/home",
+        "to": "/",
         "exact": true,
         "restricted": false
       }
@@ -41,17 +41,6 @@
         "to": "/login",
         "exact": true,
         "restricted": true
-      }
-    },
-    {
-      "id": "5",
-      "component": "../App.js",
-      "name": "app",
-      "private": true,
-      "props": {
-        "to": "/",
-        "exact": true,
-        "restricted": false
       }
     }
   ]
