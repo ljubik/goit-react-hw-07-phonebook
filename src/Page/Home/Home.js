@@ -1,14 +1,15 @@
 import React, { Component } from "react";
-import axios from "axios";
+// import axios from "axios";
 import Navigate from "../../components/Navigation/Navigation";
 import App from "../../App";
-
+import Navigation from '../../components/Navigation/Navigation';
+import navLinks from '../..//db/naviate.json';
 import style from "./Home.module.css";
 
 
 class Home extends Component {
   state = {
-    msg: "",
+    msg: "Please register or login",
   };
 
   componentDidUpdate(prevProps, prevState) {
@@ -17,7 +18,7 @@ class Home extends Component {
   }
 
   componentWillUnmount() {
-    console.log(`Я пошел спать`);
+    // console.log(`Я пошел спать`);
   }
 
 
@@ -29,8 +30,9 @@ class Home extends Component {
 
     return (
       <div className={style.home}>
+      <Navigation links={navLinks} />
       {/* <Navigate /> */}
-        <App  />
+        {/* <App  /> */}
         {msg && <p>{msg}</p>}
       </div>
     );

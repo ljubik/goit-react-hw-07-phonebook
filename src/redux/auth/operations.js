@@ -1,6 +1,6 @@
 import axios from 'axios'
 import * as actions from './actions'
-axios.defaults.baseURL = `https://goit-phonebook-api.herokuapp.com/`
+axios.defaults.baseURL = 'https://connections-api.herokuapp.com'
 
 const token = {
   set(token) {
@@ -15,12 +15,12 @@ const signup = (user) => async (dispatch) => {
   dispatch(actions.registerRequest())
   try {
     const { data } = await axios.post(`users/signup`, user)
-    // console.log(data)
+    console.log(data)
     token.set(data.token)
-    // console.log(data.token)
+    console.log(data.token)
     dispatch(actions.registerSuccess(data))
   } catch (error) {
-    // console.log(error.message)
+    console.log(error.message)
     dispatch(actions.registerError(error.message))
   }
 }
@@ -29,9 +29,12 @@ const signin = (user) => async (dispatch) => {
   dispatch(actions.loginRequest())
   try {
     const { data } = await axios.post(`users/login`, user)
+    console.log(data)
     token.set(data.token)
+    console.log(data.token)
     dispatch(actions.loginSuccess(data))
   } catch (error) {
+    console.log(error.message)
     dispatch(actions.loginError(error.message))
   }
 }
@@ -57,7 +60,7 @@ const getUser = () => async (dispatch, getState) => {
   token.set(myToken)
   try {
     const r = await axios.get('users/current')
-    console.log(r)
+    console.log("registered", r)
     dispatch(actions.getUserSuccess(r.data))
   } catch (err) {
     dispatch(actions.getUserError(err))

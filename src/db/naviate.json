@@ -3,7 +3,7 @@
       "id": "1",
       "component": "./Page/Home/Home",
       "name": "home",
-      "private": true,
+      "private": false,
       "props": {
         "to": "/",
         "exact": true,
@@ -13,7 +13,7 @@
     {
       "id": "2",
       "component": "./components/ContactList/ContactList",
-      "name": "contacts",
+      "name": "Contacts",
       "props": {
         "to": "/contacts",
         "private": true,
@@ -39,6 +39,17 @@
       "private": false,
       "props": {
         "to": "/login",
+        "exact": true,
+        "restricted": true
+      }
+    },
+    {
+      "id": "5",
+      "component": "./App",
+      "name": "Home",
+      "private": true,
+      "props": {
+        "to": "/",
         "exact": true,
         "restricted": true
       }

@@ -1,26 +1,37 @@
-import React, { Component } from 'react'
-import { Form, Button } from 'react-bootstrap'
-import { connect } from 'react-redux'
-import operations from '../../redux/auth/operations'
+import React, { Component } from 'react';
+import { Form, Button } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import operations from '../../redux/auth/operations';
+import style from "./Register.module.css";
+import { Route, Redirect } from 'react-router-dom'
+
 
 class RegisterPage extends Component {
-  state = { name: '', email: '', password: '' }
+  state = { name: '', email: '', password: '', myRedirect:false }
+
   handleChange = (e) => {
     const { name, value } = e.target
     this.setState({ [name]: value })
   }
+
   handleSubmit = (e) => {
     e.preventDefault()
     this.props.myProp({ ...this.state })
-    this.setState({ name: '', email: '', password: '' })
+    
+    this.setState({ name: '', email: '', password: ''})
+    setTimeout(this.setState({myRedirect:true}), 5000);
+  }
+
+  onClick = () =>{
+    this.setState({ myRedirect:true })
   }
 
   render() {
-    const { name, email, password } = this.state
-    const { handleChange, handleSubmit } = this
+    const { name, email, password, myRedirect } = this.state
+    const { handleChange, handleSubmit, onClick } = this
     return (
-      <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="formBasicEmail">
+      <Form onSubmit={handleSubmit} className={style.home}>
+        <Form.Group controlId="formBasicName">
           <Form.Label>User name</Form.Label>
           <Form.Control
             type="text"
@@ -52,9 +63,14 @@ class RegisterPage extends Component {
           />
         </Form.Group>
 
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" onClick={onClick}>
+          Back
+        </Button>
+        <Button variant="primary" type="submit" >
           Submit
         </Button>
+        {myRedirect ? <Redirect to="/"/> : <Redirect to="/register"/>}
+        {console.log(myRedirect)}
       </Form>
     )
   }
